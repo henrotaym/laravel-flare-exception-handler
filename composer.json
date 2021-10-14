@@ -1,0 +1,29 @@
+{
+    "name": "henrotaym/laravel-flare-exception-handler",
+    "description": "Simple exception handler logging exception context to flare.",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Mathieu Henrotay",
+            "email": "mathieu.henrotay@gmail.com"
+        }
+    ],
+    "require": {
+        "facade/ignition": "^2.15"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^6.0",
+        "phpunit/phpunit": "^9.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "Henrotaym\\LaravelFlareExceptionHandler\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Henrotaym\\LaravelFlareExceptionHandler\\Tests\\": "tests"
+        }
+    }
+}
