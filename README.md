@@ -1,5 +1,13 @@
 # Flare exception handler
 
+## Compatibility
+
+| Version de laravel | Version du package |
+|--|--|
+| 7.x.x | 1.x.x |
+| 8.x.x | 2.x.x |
+| 9.x.x | 2.x.x |
+
 ## Installation
 
     composer require henrotaym/laravel-flare-exception-handler

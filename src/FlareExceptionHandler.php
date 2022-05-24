@@ -3,7 +3,7 @@
 namespace Henrotaym\LaravelFlareExceptionHandler;
 
 use Throwable;
-use Facade\Ignition\Facades\Flare;
+use \Spatie\LaravelIgnition\Facades\Flare;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 
 /**
