@@ -7,6 +7,6 @@ class LaravelFlareExceptionHandlerServiceProvider extends ServiceProvider
 {
     public function register()
     {
-        config(['logging.flare' => ['driver' => 'flare']]);
+        config(['logging.channels.flare' => ['driver' => 'flare']]);
     }
 }
