@@ -21,9 +21,11 @@ LOG_CHANNEL=flare
 ```
 
 ### Handler
-Your application `handler.php` should look like this
+Your application `Handler.php` should look like this
 
 ```php
+namespace App\Exceptions;
+
 use Henrotaym\LaravelFlareExceptionHandler\FlareExceptionHandler;
 
 class Handler extends FlareExceptionHandler
