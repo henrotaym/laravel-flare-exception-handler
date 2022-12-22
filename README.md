@@ -14,9 +14,23 @@
 
 ## Configuration
 
-Your handler should extends :
+### Environment
 
-    Henrotaym\LaravelFlareExceptionHandler\FlareExceptionHandler
+```shell
+LOG_CHANNEL=flare
+```
+
+### Handler
+Your application `handler.php` should look like this
+
+```php
+use Henrotaym\LaravelFlareExceptionHandler\FlareExceptionHandler;
+
+class Handler extends FlareExceptionHandler
+{
+    
+}
+```
 
 If you need more control, override `register` method from handler and call this method where needed :
 
