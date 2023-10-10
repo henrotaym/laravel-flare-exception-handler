@@ -7,6 +7,7 @@
 | 7.x.x | 1.x.x |
 | 8.x.x | 2.x.x |
 | 9.x.x | 2.x.x |
+| 10.x.x | 3.x.x |
 
 ## Installation
 
@@ -20,7 +21,8 @@
 LOG_CHANNEL=flare
 ```
 
-### Handler
+## Usage
+### Prior to v3.x.x
 Your application `Handler.php` should look like this
 
 ```php
@@ -35,13 +37,39 @@ class Handler extends FlareExceptionHandler
 ```
 
 If you need more control, override `register` method from handler and call this method where needed :
-
+```php
     /**
     * Reporting exception context to flare.
     * 
     * @param Throwable $e
     * @return void
     */
-    protected function reportContextToFlare(Throwable $e)
+    protected function reportContextToFlare(Throwable $e);
+```
 
+### v3.x.x
+```php
+namespace App\Exceptions;
 
+use Henrotaym\LaravelFlareExceptionHandler\Traits\IsFlareLogger;
+use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
+
+/**
+ * Handler logging exception with their context to flare.
+ * 
+ */
+class Handler extends ExceptionHandler
+{
+    use IsFlareLogger;
+
+    /**
+     * Register the exception handling callbacks for the application.
+     *
+     * @return void
+     */
+    public function register()
+    {
+        $this->reportToFlare();
+    }
+}
+```
