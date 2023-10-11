@@ -2,6 +2,7 @@
 
 namespace Henrotaym\LaravelFlareExceptionHandler;
 
+use Henrotaym\LaravelFlareExceptionHandler\Context\FlareContext;
 use Henrotaym\LaravelFlareExceptionHandler\Traits\IsFlareLogger;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 
@@ -9,10 +10,8 @@ use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
  * Handler logging exception with their context to flare.
  * 
  */
-class Handler extends ExceptionHandler
+class FlareExceptionHandler extends ExceptionHandler
 {
-    use IsFlareLogger;
-
     /**
      * Register the exception handling callbacks for the application.
      *
@@ -20,6 +19,6 @@ class Handler extends ExceptionHandler
      */
     public function register()
     {
-        $this->reportToFlare();
+        $this->reportable(FlareContext::report());
     }
 }
