@@ -54,21 +54,14 @@ namespace App\Exceptions;
 use Henrotaym\LaravelFlareExceptionHandler\Traits\IsFlareLogger;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 
-/**
- * Handler logging exception with their context to flare.
- * 
- */
 class Handler extends ExceptionHandler
 {
+    // Add flare logger trait
     use IsFlareLogger;
 
-    /**
-     * Register the exception handling callbacks for the application.
-     *
-     * @return void
-     */
     public function register()
     {
+        // Add this line to register method
         $this->reportToFlare();
     }
 }
