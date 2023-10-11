@@ -51,18 +51,15 @@ If you need more control, override `register` method from handler and call this 
 ```php
 namespace App\Exceptions;
 
-use Henrotaym\LaravelFlareExceptionHandler\Traits\IsFlareLogger;
+use Henrotaym\LaravelFlareExceptionHandler\Context\FlareContext;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 
 class Handler extends ExceptionHandler
 {
-    // Add flare logger trait
-    use IsFlareLogger;
-
     public function register()
     {
-        // Add this line to register method
-        $this->reportToFlare();
+        // Add this line to report context to flare
+        $this->reportable(FlareContext::report());
     }
 }
 ```
