@@ -28,18 +28,4 @@ class FlareContextTest extends TestCase
 
         $this->assertNull($result);
     }
-
-    /**
-     * @template TClass
-     * 
-     * @param class-string<TClass> $className
-     * @return TClass|MockInterface
-     */
-    protected function mockThis(string $className): MockInterface
-    {
-        $mock = $this->mock($className);
-        $this->app->bind($className, fn () => $mock);
-
-        return $mock;
-    }
 }

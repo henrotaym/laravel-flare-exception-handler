@@ -12,8 +12,7 @@ class FlareContextLoggerFactoryTest extends TestCase
     public function reporting_context_to_flare()
     {
         $exception = new ContextException();
-        /** @var FlareContextLoggerFactory */
-        $loggerFactory = app()->make(FlareContextLoggerFactory::class);
+        $loggerFactory = $this->makeThis(FlareContextLoggerFactory::class);
 
         $logger = $loggerFactory->create($exception);
 
