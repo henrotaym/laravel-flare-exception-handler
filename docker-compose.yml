@@ -1,0 +1,22 @@
+services:
+    cli:
+        user: "${UID}:${GID}"
+        container_name: laravel-flare-exception-handler
+        build:
+            args:
+                - UID=${UID}
+                - GID=${GID}
+            context: .
+            dockerfile: ./Dockerfile
+            target: cli
+        image: henrotaym/laravel-flare-exception-handler:local
+        volumes:
+            - .:/opt/apps/app
+        networks:
+            - laravel-flare-exception-handler
+        profiles:
+        - "cli"
+
+networks:
+    laravel-flare-exception-handler:
+        driver: bridge
