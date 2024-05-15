@@ -6,6 +6,9 @@ use Henrotaym\LaravelFlareExceptionHandler\Context\FlareContextLoggerFactory;
 
 class FlareContext
 {
+    /**
+     * @return callable(Throwable $e): void
+     */
     public static function report(): callable
     {
         /** @var FlareContextLoggerFactory */
