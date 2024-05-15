@@ -22,32 +22,7 @@ LOG_CHANNEL=flare
 ```
 
 ## Usage
-### Prior to v3.x.x
-Your application `Handler.php` should look like this
-
-```php
-namespace App\Exceptions;
-
-use Henrotaym\LaravelFlareExceptionHandler\FlareExceptionHandler;
-
-class Handler extends FlareExceptionHandler
-{
-    
-}
-```
-
-If you need more control, override `register` method from handler and call this method where needed :
-```php
-    /**
-    * Reporting exception context to flare.
-    * 
-    * @param Throwable $e
-    * @return void
-    */
-    protected function reportContextToFlare(Throwable $e);
-```
-
-### v3.x.x
+### Optimal
 ```php
 namespace App\Exceptions;
 
@@ -62,4 +37,27 @@ class Handler extends ExceptionHandler
         $this->reportable(FlareContext::report());
     }
 }
+```
+### Deprecated
+Your application `Handler.php` should look like this
+
+```php
+namespace App\Exceptions;
+
+use Henrotaym\LaravelFlareExceptionHandler\FlareExceptionHandler;
+
+class Handler extends FlareExceptionHandler
+{
+    
+}
+```
+If you need more control, override `register` method from handler and call this method where needed :
+```php
+    /**
+    * Reporting exception context to flare.
+    * 
+    * @param Throwable $e
+    * @return void
+    */
+    protected function reportContextToFlare(Throwable $e);
 ```
