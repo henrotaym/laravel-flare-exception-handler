@@ -2,8 +2,8 @@
 
 namespace Henrotaym\LaravelFlareExceptionHandler;
 
+use Henrotaym\LaravelFlareExceptionHandler\Context\FlareContext;
 use Throwable;
-use \Spatie\LaravelIgnition\Facades\Flare;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 
 /**
@@ -19,23 +19,20 @@ class FlareExceptionHandler extends ExceptionHandler
      */
     public function register()
     {
-        $this->reportable(function (Throwable $e) {
-            $this->reportContextToFlare($e);
-        });
+        $this->reportable(FlareContext::report());
     }
 
     /**
      * Reporting exception context to flare.
+     * 
+     * @deprecated You should now use FlareContext::report().
      * 
      * @param Throwable $e
      * @return void
      */
     protected function reportContextToFlare(Throwable $e)
     {
-        if(method_exists($e, 'context')):
-            foreach ($e->context() as $key => $value):
-                Flare::context($key, $value);
-            endforeach;
-        endif;
+        $report = FlareContext::report();
+        $report($e);
     }
 }
