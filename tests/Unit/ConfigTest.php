@@ -2,10 +2,11 @@
 namespace Henrotaym\LaravelFlareExceptionHandler\Tests\Unit;
 
 use Henrotaym\LaravelFlareExceptionHandler\Tests\TestCase;
+use PHPUnit\Framework\Attributes\Test;
 
 class ConfigTest extends TestCase
 {
-    /** @test */
+    #[Test]
     public function registering_flare_logging_channel()
     {
         $expectedChannel = [

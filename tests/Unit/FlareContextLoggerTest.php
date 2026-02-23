@@ -6,11 +6,12 @@ use Henrotaym\LaravelFlareExceptionHandler\Context\FlareContextLogger;
 use Henrotaym\LaravelFlareExceptionHandler\Context\FlareExceptionContextFactory;
 use Henrotaym\LaravelFlareExceptionHandler\Tests\Exceptions\ContextException;
 use Henrotaym\LaravelFlareExceptionHandler\Tests\TestCase;
+use PHPUnit\Framework\Attributes\Test;
 use Spatie\LaravelIgnition\Facades\Flare;
 
 class FlareContextLoggerTest extends TestCase
 {
-    /** @test */
+    #[Test]
     public function reporting_context_to_flare()
     {
         $exception = new ContextException();
@@ -24,7 +25,7 @@ class FlareContextLoggerTest extends TestCase
         $logger->report();
     }
 
-    /** @test */
+    #[Test]
     public function skipping_exception_without_context()
     {
         $exception = new Exception();
@@ -35,7 +36,7 @@ class FlareContextLoggerTest extends TestCase
         $logger->report();
     }
 
-    /** @test */
+    #[Test]
     public function reporting_previous_exception()
     {
         $context = ["message" => ":message"];

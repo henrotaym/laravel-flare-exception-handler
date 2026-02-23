@@ -7,10 +7,11 @@ use Henrotaym\LaravelFlareExceptionHandler\Tests\TestCase;
 use Henrotaym\LaravelFlareExceptionHandler\Context\FlareContext;
 use Henrotaym\LaravelFlareExceptionHandler\Context\FlareContextLogger;
 use Henrotaym\LaravelFlareExceptionHandler\Context\FlareContextLoggerFactory;
+use PHPUnit\Framework\Attributes\Test;
 
 class FlareContextTest extends TestCase
 {
-    /** @test */
+    #[Test]
     public function constructing_a_reportable_callback()
     {
         $exception = new Exception();

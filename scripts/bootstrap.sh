@@ -1,5 +1,3 @@
 #!/bin/bash
-
-./scripts/set_env.sh && \
-docker compose --profile=cli build && \
+docker compose build && \
 ./cli composer install

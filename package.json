@@ -1,0 +1,10 @@
+{
+    "name": "@henrotaym/laravel-flare-exception-handler",
+    "version": "3.2.0",
+    "private": true,
+    "license": "MIT",
+    "scripts": {
+        "push": "git push && git push --tags",
+        "postversion": "npm run push"
+    }
+}

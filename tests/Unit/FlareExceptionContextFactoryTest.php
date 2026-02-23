@@ -4,10 +4,11 @@ namespace Henrotaym\LaravelFlareExceptionHandler\Tests\Unit;
 use Exception;
 use Henrotaym\LaravelFlareExceptionHandler\Tests\TestCase;
 use Henrotaym\LaravelFlareExceptionHandler\Context\FlareExceptionContextFactory;
+use PHPUnit\Framework\Attributes\Test;
 
 class FlareExceptionContextFactoryTest extends TestCase
 {
-    /** @test */
+    #[Test]
     public function creating_exception_context()
     {
         $message = ":message";

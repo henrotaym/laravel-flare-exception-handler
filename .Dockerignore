@@ -1,4 +1,2 @@
+.github
 vendor
-.phpunit.result.cache
-.phpunit.cache
-composer

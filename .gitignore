@@ -1,5 +1,7 @@
-/vendor/
-.phpunit.result.cache
+.idea
 .phpunit.cache
-composer
+.phpunit.result.cache
+build
+vendor
+node_modules
 .env
