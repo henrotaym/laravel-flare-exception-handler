@@ -7,3 +7,11 @@ services:
     image: "laravel-flare-exception-handler-php-local"
     volumes:
       - ./:/opt/apps/app
+  bun:
+    build:
+      context: .
+      target: bun
+      dockerfile: Dockerfile
+    image: "laravel-flare-exception-handler-bun-local"
+    volumes:
+      - ./:/opt/apps/app
