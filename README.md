@@ -8,6 +8,8 @@
 | 8.x.x | 2.x.x |
 | 9.x.x | 2.x.x |
 | 10.x.x | 3.x.x |
+| 11.x.x | 3.x.x |
+| 12.x.x | 4.x.x |
 
 ## Installation
 
