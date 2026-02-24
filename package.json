@@ -1,6 +1,6 @@
 {
     "name": "@henrotaym/laravel-flare-exception-handler",
-    "version": "4.0.0",
+    "version": "4.0.1",
     "main": "index.js",
     "repository": "git@github.com:henrotaym/laravel-flare-exception-handler.git",
     "author": "Mathieu Henrotay <mathieu.henrotay@gmail.com>",
